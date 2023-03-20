@@ -49,13 +49,12 @@ let productos = [
     }
 ]
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const peso = '$';
 const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#productosEnCarrito');
 const numCarrito = document.getElementById('numCarrito');
 const total = document.getElementById('total');
-const categoriaFruta = document.getElementById('categoriaFruta');
 
 
 function renderizarProductos(){
@@ -95,15 +94,16 @@ function renderizarProductos(){
     })
 }
 
-categoriaFruta.addEventListener('click', filtrarCategoriaF);
 
-function filtrarCategoriaF(){
-    
-}
 
 function añadir(e){
     carrito.push(e.target.getAttribute('marcador'));
     renderizarCarrito();
+    localstorage();
+}
+
+const localstorage = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 function renderizarCarrito(){
