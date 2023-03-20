@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    margin-top: 1rem;
+    max-width: 100%;
+}
+main .title{
+    display: flex;
+    justify-content: center;
+}
+main .container #items .col-sm-4 .card-personalizada img{
+    height: 310px;
+    width: auto;
+    object-fit: cover;
+}
